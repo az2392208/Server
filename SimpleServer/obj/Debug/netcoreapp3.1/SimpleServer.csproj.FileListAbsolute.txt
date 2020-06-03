@@ -1,0 +1,11 @@
+C:\Users\Aive\Desktop\Server\SimpleServer\bin\Debug\netcoreapp3.1\SimpleServer.exe
+C:\Users\Aive\Desktop\Server\SimpleServer\bin\Debug\netcoreapp3.1\SimpleServer.deps.json
+C:\Users\Aive\Desktop\Server\SimpleServer\bin\Debug\netcoreapp3.1\SimpleServer.runtimeconfig.json
+C:\Users\Aive\Desktop\Server\SimpleServer\bin\Debug\netcoreapp3.1\SimpleServer.runtimeconfig.dev.json
+C:\Users\Aive\Desktop\Server\SimpleServer\bin\Debug\netcoreapp3.1\SimpleServer.dll
+C:\Users\Aive\Desktop\Server\SimpleServer\bin\Debug\netcoreapp3.1\SimpleServer.pdb
+C:\Users\Aive\Desktop\Server\SimpleServer\obj\Debug\netcoreapp3.1\SimpleServer.csprojAssemblyReference.cache
+C:\Users\Aive\Desktop\Server\SimpleServer\obj\Debug\netcoreapp3.1\SimpleServer.AssemblyInfoInputs.cache
+C:\Users\Aive\Desktop\Server\SimpleServer\obj\Debug\netcoreapp3.1\SimpleServer.AssemblyInfo.cs
+C:\Users\Aive\Desktop\Server\SimpleServer\obj\Debug\netcoreapp3.1\SimpleServer.dll
+C:\Users\Aive\Desktop\Server\SimpleServer\obj\Debug\netcoreapp3.1\SimpleServer.pdb
