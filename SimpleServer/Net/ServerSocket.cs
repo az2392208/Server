@@ -33,6 +33,9 @@ namespace SimpleServer.Net
             IPAddress ip = IPAddress.Parse(m_IpStr);
             IPEndPoint iPEndPoint = new IPEndPoint(ip, m_port);
             m_ListenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            m_ListenSocket.Bind(iPEndPoint);
+            m_ListenSocket.Listen(10);
+            Console.WriteLine("服务器监听成功");
         }
     }
 }

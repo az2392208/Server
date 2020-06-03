@@ -1,0 +1,9 @@
+C:\Users\Aive\Desktop\Server\SerBase\bin\Debug\SerBase.exe.config
+C:\Users\Aive\Desktop\Server\SerBase\bin\Debug\SerBase.exe
+C:\Users\Aive\Desktop\Server\SerBase\bin\Debug\SerBase.pdb
+C:\Users\Aive\Desktop\Server\SerBase\bin\Debug\log4net.dll
+C:\Users\Aive\Desktop\Server\SerBase\bin\Debug\log4net.xml
+C:\Users\Aive\Desktop\Server\SerBase\obj\Debug\SerBase.csprojAssemblyReference.cache
+C:\Users\Aive\Desktop\Server\SerBase\obj\Debug\SerBase.csproj.CopyComplete
+C:\Users\Aive\Desktop\Server\SerBase\obj\Debug\SerBase.exe
+C:\Users\Aive\Desktop\Server\SerBase\obj\Debug\SerBase.pdb

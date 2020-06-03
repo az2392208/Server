@@ -9,3 +9,9 @@ C:\Users\Aive\Desktop\Server\SimpleServer\obj\Debug\netcoreapp3.1\SimpleServer.A
 C:\Users\Aive\Desktop\Server\SimpleServer\obj\Debug\netcoreapp3.1\SimpleServer.AssemblyInfo.cs
 C:\Users\Aive\Desktop\Server\SimpleServer\obj\Debug\netcoreapp3.1\SimpleServer.dll
 C:\Users\Aive\Desktop\Server\SimpleServer\obj\Debug\netcoreapp3.1\SimpleServer.pdb
+C:\Users\Aive\Desktop\Server\SimpleServer\bin\Debug\netcoreapp3.1\log4net.dll
+C:\Users\Aive\Desktop\Server\SimpleServer\bin\Debug\netcoreapp3.1\SerBase.pdb
+C:\Users\Aive\Desktop\Server\SimpleServer\obj\Debug\netcoreapp3.1\SimpleServer.csproj.CopyComplete
+C:\Users\Aive\Desktop\Server\SimpleServer\bin\Debug\netcoreapp3.1\SerBase.exe
+C:\Users\Aive\Desktop\Server\SimpleServer\bin\Debug\netcoreapp3.1\SerBase.exe.config
+C:\Users\Aive\Desktop\Server\SimpleServer\bin\Debug\netcoreapp3.1\log4net.xml
