@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Net\ByteArray.cs" />
     <Compile Include="Net\ClientSocket.cs" />
     <Compile Include="Net\ServerSocket.cs" />
     <Compile Include="Program.cs" />

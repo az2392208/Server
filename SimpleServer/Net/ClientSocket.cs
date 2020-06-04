@@ -11,5 +11,6 @@ namespace SimpleServer.Net
     {
         //客户端的类
         public Socket socket { get; set; }
+        public long LastPingTime { get; set; } = 0;
     }
 }
