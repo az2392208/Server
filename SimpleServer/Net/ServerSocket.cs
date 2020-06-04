@@ -117,9 +117,50 @@ namespace SimpleServer.Net
         {
             ClientSocket clientSocket = m_clientDic[client];
             //接收信息根据信息解析协议,更具协议内容
+            ByteArray readBuff = clientSocket.ReadBuff;
+            int count = 0;
+            //如果上一次刚好填充满整个长度
+            if (readBuff.Remain <= 0)
+            {
+                //移动到index=0的位置
+                OnReceiveData(clientSocket);
+                readBuff.CheckAndMoveBytes();
+                //如果数据长度大与默认长度,保证信息正常接受
+                while (readBuff.Remain <= 0)
+                {
+                    //扩充数组长度
+                    int expandsize = readBuff.Length < ByteArray.DEFFAULT_SIZE ? ByteArray.DEFFAULT_SIZE : readBuff.Length;
+                    readBuff.ReSize(expandsize);
+                }
+            }
+            try
+            {
+                count = client.Receive(readBuff.Bytes, readBuff.WriteIndex, readBuff.Remain, 0);
+            }
+            catch (SocketException e)
+            {
+                Debug.LogError("Receive Error:+" + e);
+                CloseClient(clientSocket);
+                return;
+            }
+            if (count <= 0)
+            {
+                CloseClient(clientSocket);
+                return;
+            }
+            readBuff.WriteIndex += count;
+            //解析信息
+            OnReceiveData(clientSocket);
+            readBuff.CheckAndMoveBytes();
+        }
 
-            client.Receive();
-
+        /// <summary>
+        /// 解析接收到的数据
+        /// </summary>
+        /// <param name="clientSocket"></param>
+        private void OnReceiveData(ClientSocket clientSocket)
+        {
+            //如果信息长度不够,我们要再次读取信息
         }
         /// <summary>
         /// 关闭同客户端之间的通讯

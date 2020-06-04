@@ -43,7 +43,7 @@ namespace SimpleServer.Net
         {
             if (Length < 8)
             {
-                return;
+                MoveBytes();
             }
         }
 
@@ -53,6 +53,23 @@ namespace SimpleServer.Net
                 return;
             //将数组从Readindex开始copy到该数组的0位置copy的长度为length
             Array.Copy(Bytes, ReadIdx, Bytes, 0, Length);
+            WriteIndex = Length;
+            ReadIdx = 0;
+        }
+
+        public void ReSize(int size)
+        {
+            if (ReadIdx < 0) return;
+            if (size < Length) return;
+            if (size < DEFFAULT_SIZE) return;
+            int n = 1024;
+            while (n < size)
+            {
+                n *= 2;
+            }
+            Capacity = n;
+            byte[] newByte = new byte[Capacity];
+            Array.Copy(Bytes, ReadIdx, newByte, 0, Length);
             WriteIndex = Length;
             ReadIdx = 0;
         }
