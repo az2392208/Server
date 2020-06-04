@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleServer.Net;
+using System;
 using System.IO;
 using System.Text;
 
@@ -8,6 +9,7 @@ namespace SimpleServer
     {
         static void Main(string[] arg)
         {
+            ServerSocket.Instance.Init();
         }
     }
 }

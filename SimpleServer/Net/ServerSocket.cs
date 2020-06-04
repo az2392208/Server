@@ -25,9 +25,13 @@ namespace SimpleServer.Net
         //服务器的监听socket
         private static Socket m_ListenSocket;
 
-        //客户端的socket集合(已经连接上的所有socket)
+        //临时保存所有socket集合
         private static List<Socket> m_CheckReadList = new List<Socket>();
-        //初始化
+        //存放所有的socket
+        public static Dictionary<Socket, ClientSocket> m_clientDic = new Dictionary<Socket, ClientSocket>();
+        /// <summary>
+        /// 初始化
+        /// </summary>
         public void Init()
         {
             IPAddress ip = IPAddress.Parse(m_IpStr);
@@ -35,7 +39,26 @@ namespace SimpleServer.Net
             m_ListenSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             m_ListenSocket.Bind(iPEndPoint);
             m_ListenSocket.Listen(10);
-            Console.WriteLine("服务器监听成功");
+
+            Debug.LogInfo("服务器启动监听成功", m_ListenSocket.LocalEndPoint.ToString());
+     
+            while (true)
+            {
+                ResetCheckRead();
+            }
+        }
+        /// <summary>
+        /// 读取所有的socket
+        /// 将他们从Socket字典中提取到Socket集合中来
+        /// </summary>
+        public void ResetCheckRead()
+        {
+            m_CheckReadList.Clear();
+            m_CheckReadList.Add(m_ListenSocket);
+            foreach (Socket s in m_clientDic.Keys)
+            {
+                m_CheckReadList.Add(s);
+            }
         }
     }
 }
