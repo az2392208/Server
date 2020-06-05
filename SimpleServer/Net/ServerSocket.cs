@@ -1,7 +1,9 @@
-﻿using System;
+﻿using SimpleServer.Proto;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Text;
 
 namespace SimpleServer.Net
@@ -154,13 +156,122 @@ namespace SimpleServer.Net
             readBuff.CheckAndMoveBytes();
         }
 
+        public static void OnSendData(ClientSocket client, MsgBase msgBase)
+        {
+            if (client == null || !client.socket.Connected)
+            {
+                return;
+            }
+            try
+            {
+                //编码名字
+                byte[] nameBytes = MsgBase.EncodName(msgBase);
+                //编码协议
+                byte[] bodyBytes = MsgBase.Encond(msgBase);
+                //整体协议的长度
+                int len = nameBytes.Length + bodyBytes.Length;
+                //协议头
+                byte[] headBytes = BitConverter.GetBytes(len);
+                byte[] sendBytes = new byte[headBytes.Length + len];
+                Array.Copy(headBytes, 0, sendBytes, 0, headBytes.Length);
+                Array.Copy(nameBytes, 0, sendBytes, headBytes.Length, nameBytes.Length);
+                Array.Copy(bodyBytes, 0, sendBytes, headBytes.Length + nameBytes.Length, bodyBytes.Length);
+                try
+                {
+                    client.socket.BeginSend(sendBytes, 0, sendBytes.Length, 0, null, null);
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError("Socket BeginSend Error:" + e);
+                }
+
+            }
+            catch (SocketException e)
+            {
+                Debug.LogError("Socket发送数据失败:" + e);
+            }
+        }
+
         /// <summary>
-        /// 解析接收到的数据
+        /// 接收数据处理
         /// </summary>
         /// <param name="clientSocket"></param>
         private void OnReceiveData(ClientSocket clientSocket)
         {
+            ByteArray readbyff = clientSocket.ReadBuff;
             //如果信息长度不够,我们要再次读取信息
+            if (readbyff.Length <= 4 || readbyff.ReadIdx < 0)
+            {
+                return;
+            }
+            int readIndex = readbyff.ReadIdx;
+            byte[] bytes = readbyff.Bytes;
+            //从readIndex处读取四个字节的长度得到整个包体的长度
+            int bodyLength = BitConverter.ToInt32(bytes, readIndex);
+            //判断接收到的信息长度是否小于包体的长度+包头的长度,如果小于表示我们的信息不全,如果大于表示已经接收到了全部的信息,但是可能有粘包存在
+            if (readbyff.Length < bodyLength + 4) return;
+            readbyff.ReadIdx += 4;
+            //解析协议名
+            int namecount = 0;
+            ProtocolEnum proto = ProtocolEnum.None;
+            try
+            {
+                proto = MsgBase.DecodeName(readbyff.Bytes, readbyff.ReadIdx, out namecount);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("Socket解析协议名出错:" + e);
+                CloseClient(clientSocket);
+                return;
+            }
+
+            if (proto == ProtocolEnum.None)
+            {
+                Debug.LogError("OnReceiveData MsgBase.DecodeName fail");
+                CloseClient(clientSocket);
+                return;
+            }
+            readbyff.ReadIdx += namecount;
+            //解析协议体
+            int bodyCount = bodyLength - namecount;
+            MsgBase msgBase = null;
+            try
+            {
+                msgBase = MsgBase.Decode(proto, readbyff.Bytes, readbyff.ReadIdx, bodyCount);
+                if (msgBase == null)
+                {
+                    Debug.LogError("{0}协议解析失败" + proto.ToString());
+        
+                    CloseClient(clientSocket);
+                    return;
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("解析协议失败:" + e);
+                CloseClient(clientSocket);
+                return;
+            }
+            readbyff.ReadIdx += bodyCount;
+            readbyff.CheckAndMoveBytes();
+            //分发消息(采用反射的方式)
+            MethodInfo mi = typeof(MsgHandler).GetMethod(proto.ToString());
+            object[] o = { clientSocket, msgBase };
+            if(mi!=null)
+            {
+                mi.Invoke(null,o);
+            }
+            else
+            {
+                Debug.LogError("OnReceiveData Invoke fail:" + proto.ToString()); 
+            }
+
+            //继续读消息
+            if (readbyff.Length > 4)
+            {
+                OnReceiveData(clientSocket);
+            }
+            
         }
         /// <summary>
         /// 关闭同客户端之间的通讯
@@ -170,6 +281,7 @@ namespace SimpleServer.Net
         {
             client.socket.Close();
             m_clientDic.Remove(client.socket);
+            Debug.Log("一个客户端断开了连接,当前连接总数为{0}", m_clientDic.Count);
         }
         /// <summary>
         /// 这个是等待服务器进行连接的监听端口
@@ -179,6 +291,7 @@ namespace SimpleServer.Net
         {
             try
             {
+                //分为三部分,头:总协议长度;名字;协议内容
                 Socket client = listen.Accept();
                 ClientSocket clientSocket = new ClientSocket();
                 clientSocket.socket = client;
