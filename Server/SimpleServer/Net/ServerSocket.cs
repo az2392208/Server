@@ -303,6 +303,10 @@ namespace SimpleServer.Net
                 m_clientDic.Add(client, clientSocket);
                 Debug.Log($"一个客户端连接:{client.LocalEndPoint.ToString()},当前{m_clientDic.Count}客户端在线");
                 Debug.Log("一个客户端连接");
+                byte[] aa = Encoding.UTF8.GetBytes("HellowWorld");
+                MsgBase msg = new MsgSecret();
+                OnSendData(clientSocket, msg);
+
             }
             catch (SocketException ex)
             {

@@ -21,13 +21,17 @@ namespace SimpleServer.Net
         //容量
         private int Capacity = 0;
 
-        //剩余空间(容量减去写入位置)
-        public int Remain { get { return Capacity - WriteIndex; } }
-        //数据长度(写完后的位置-开始写的时候的位置=数据长度)
-        public int Length { get { return WriteIndex - ReadIdx; } }
         /// <summary>
-        /// 初始化
+        ///  剩余空间(容量减去写入位置)
         /// </summary>
+        /// <param name=""></param>
+        public int Remain { get { return Capacity - WriteIndex; } }
+        
+        /// <summary>
+        /// 数据长度(写完后的位置-开始写的时候的位置=数据长度)
+        /// </summary>
+        public int Length { get { return WriteIndex - ReadIdx; } }
+
         public ByteArray()
         {
             Bytes = new byte[DEFFAULT_SIZE];
@@ -36,6 +40,7 @@ namespace SimpleServer.Net
             ReadIdx = 0;
             WriteIndex = 0;
         }
+
         /// <summary>
         /// 检测并移动数据
         /// </summary>
@@ -56,7 +61,11 @@ namespace SimpleServer.Net
             WriteIndex = Length;
             ReadIdx = 0;
         }
-
+        /// <summary>
+        /// 设置数据的长度
+        /// 用于数组长度不够存储数据时扩充数组的长度
+        /// </summary>
+        /// <param name="size">扩充后的长度</param>
         public void ReSize(int size)
         {
             if (ReadIdx < 0) return;

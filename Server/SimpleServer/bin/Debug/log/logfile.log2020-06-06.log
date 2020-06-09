@@ -29,3 +29,20 @@
    在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
    在 SimpleServer.Net.ServerSocket.ReadClient(Socket client) 位置 C:\Users\Aive\Desktop\MyServer\Server\SimpleServer\Net\ServerSocket.cs:行号 140 Debug 
 2020-06-06 10:18:08,864 [1] DEBUG Debug - 一个客户端断开了连接,当前连接总数为0 Debug 
+2020-06-06 15:20:32,846 [1] INFO  Debug - 服务器启动监听成功 Debug 
+2020-06-06 15:20:39,297 [1] DEBUG Debug - 一个客户端连接:127.0.0.1:8899,当前1客户端在线 Debug 
+2020-06-06 15:20:39,298 [1] DEBUG Debug - 一个客户端连接 Debug 
+2020-06-06 15:23:30,232 [1] INFO  Debug - 服务器启动监听成功 Debug 
+2020-06-06 15:23:34,948 [1] DEBUG Debug - 一个客户端连接:127.0.0.1:8899,当前1客户端在线 Debug 
+2020-06-06 15:23:34,948 [1] DEBUG Debug - 一个客户端连接 Debug 
+2020-06-06 15:23:49,694 [1] ERROR Debug - Receive Error:+System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   在 SimpleServer.Net.ServerSocket.ReadClient(Socket client) 位置 C:\Users\Aive\Desktop\MyServer\Server\SimpleServer\Net\ServerSocket.cs:行号 140 Debug 
+2020-06-06 15:23:49,696 [1] DEBUG Debug - 一个客户端断开了连接,当前连接总数为0 Debug 
+2020-06-06 15:25:43,226 [1] INFO  Debug - 服务器启动监听成功 Debug 
+2020-06-06 15:25:51,538 [1] DEBUG Debug - 一个客户端连接:127.0.0.1:8899,当前1客户端在线 Debug 
+2020-06-06 15:25:51,539 [1] DEBUG Debug - 一个客户端连接 Debug 
+2020-06-06 15:26:01,403 [1] ERROR Debug - Receive Error:+System.Net.Sockets.SocketException (0x80004005): 远程主机强迫关闭了一个现有的连接。
+   在 System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   在 SimpleServer.Net.ServerSocket.ReadClient(Socket client) 位置 C:\Users\Aive\Desktop\MyServer\Server\SimpleServer\Net\ServerSocket.cs:行号 140 Debug 
+2020-06-06 15:26:01,405 [1] DEBUG Debug - 一个客户端断开了连接,当前连接总数为0 Debug 
