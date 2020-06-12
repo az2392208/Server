@@ -40,6 +40,15 @@ public class ByteArray
         WriteIndex = 0;
     }
 
+    public ByteArray(byte[] dafalutBytes)
+    {
+        Bytes = dafalutBytes;
+        Capacity = dafalutBytes.Length;
+        m_InitSize = dafalutBytes.Length;
+        ReadIdx = 0;
+        WriteIndex = dafalutBytes.Length;
+    }
+
     /// <summary>
     /// 检测并移动数据
     /// </summary>

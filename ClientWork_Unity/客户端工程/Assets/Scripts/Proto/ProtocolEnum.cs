@@ -5,7 +5,5 @@
     MsgSecret = 1,
     //心跳包
     MsPing=2,
-
-
 }
 

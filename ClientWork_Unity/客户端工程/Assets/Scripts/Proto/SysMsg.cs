@@ -18,3 +18,14 @@ public class MsgSecret : MsgBase
     public string Secret;
 }
 
+[ProtoContract]
+public class MsPing:MsgBase
+{
+    public MsPing()
+    {
+        ProtoType = ProtocolEnum.MsPing;
+    }
+    [ProtoMember(1)]
+    public override ProtocolEnum ProtoType { get; set; }
+}
+
