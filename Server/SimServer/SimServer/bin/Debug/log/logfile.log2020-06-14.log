@@ -1,0 +1,57 @@
+﻿2020-06-14 17:19:21,877 [1] INFO  Debug - 服务器启动监听127.0.0.1:8011成功 Debug 
+2020-06-14 17:19:27,855 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-06-14 17:20:24,169 [1] INFO  Debug - 服务器启动监听127.0.0.1:8011成功 Debug 
+2020-06-14 17:20:31,234 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-06-14 17:20:31,513 [1] ERROR Debug - 协议解密出错:System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 AES.AESDecrypt(Byte[] DecryptByte, String DecryptKey) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SerBase\AES.cs:行号 207
+   在 MsgBase.Decode(ProtocolEnum protocol, Byte[] bytes, Int32 offset, Int32 count) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SimServer\Proto\MsgBase.cs:行号 102 Debug 
+2020-06-14 17:20:31,518 [1] ERROR Debug - <log4net.Error>Exception during StringFormat: 索引(从零开始)必须大于或等于零，且小于参数列表的大小。 <format>{0}协议内容解析错误：MsgSecret</format><args>{}</args></log4net.Error> Debug 
+2020-06-14 17:20:31,525 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-06-14 22:16:56,759 [1] INFO  Debug - 服务器启动监听127.0.0.1:8011成功 Debug 
+2020-06-14 22:17:03,301 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-06-14 22:17:03,554 [1] ERROR Debug - 协议解密出错:System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 AES.AESDecrypt(Byte[] DecryptByte, String DecryptKey) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SerBase\AES.cs:行号 207
+   在 MsgBase.Decode(ProtocolEnum protocol, Byte[] bytes, Int32 offset, Int32 count) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SimServer\Proto\MsgBase.cs:行号 102 Debug 
+2020-06-14 22:17:03,557 [1] ERROR Debug - <log4net.Error>Exception during StringFormat: 索引(从零开始)必须大于或等于零，且小于参数列表的大小。 <format>{0}协议内容解析错误：MsgSecret</format><args>{}</args></log4net.Error> Debug 
+2020-06-14 22:17:03,562 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-06-14 22:20:43,941 [1] INFO  Debug - 服务器启动监听127.0.0.1:8011成功 Debug 
+2020-06-14 22:20:47,058 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-06-14 22:20:47,199 [1] ERROR Debug - 协议解密出错:System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 AES.AESDecrypt(Byte[] DecryptByte, String DecryptKey) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SerBase\AES.cs:行号 207
+   在 MsgBase.Decode(ProtocolEnum protocol, Byte[] bytes, Int32 offset, Int32 count) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SimServer\Proto\MsgBase.cs:行号 102 Debug 
+2020-06-14 22:20:47,200 [1] ERROR Debug - <log4net.Error>Exception during StringFormat: 索引(从零开始)必须大于或等于零，且小于参数列表的大小。 <format>{0}协议内容解析错误：MsgSecret</format><args>{}</args></log4net.Error> Debug 
+2020-06-14 22:20:47,206 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-06-14 22:22:50,351 [1] INFO  Debug - 服务器启动监听127.0.0.1:8011成功 Debug 
+2020-06-14 22:29:46,315 [1] INFO  Debug - 服务器启动监听127.0.0.1:8899成功 Debug 
+2020-06-14 22:29:50,521 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8899,当前1个客户端在线！ Debug 
+2020-06-14 22:31:56,213 [1] INFO  Debug - 服务器启动监听127.0.0.1:8011成功 Debug 
+2020-06-14 22:32:00,601 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-06-14 22:32:00,756 [1] ERROR Debug - 协议解密出错:System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 AES.AESDecrypt(Byte[] DecryptByte, String DecryptKey) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SerBase\AES.cs:行号 207
+   在 MsgBase.Decode(ProtocolEnum protocol, Byte[] bytes, Int32 offset, Int32 count) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SimServer\Proto\MsgBase.cs:行号 102 Debug 
+2020-06-14 22:32:00,757 [1] ERROR Debug - <log4net.Error>Exception during StringFormat: 索引(从零开始)必须大于或等于零，且小于参数列表的大小。 <format>{0}协议内容解析错误：MsgSecret</format><args>{}</args></log4net.Error> Debug 
+2020-06-14 22:32:00,762 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-06-14 22:33:15,253 [1] INFO  Debug - 服务器启动监听127.0.0.1:8011成功 Debug 
+2020-06-14 22:33:21,384 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-06-14 22:33:21,526 [1] ERROR Debug - 协议解密出错:System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 AES.AESDecrypt(Byte[] DecryptByte, String DecryptKey) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SerBase\AES.cs:行号 207
+   在 MsgBase.Decode(ProtocolEnum protocol, Byte[] bytes, Int32 offset, Int32 count) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SimServer\Proto\MsgBase.cs:行号 102 Debug 
+2020-06-14 22:33:21,527 [1] ERROR Debug - <log4net.Error>Exception during StringFormat: 索引(从零开始)必须大于或等于零，且小于参数列表的大小。 <format>{0}协议内容解析错误：MsgSecret</format><args>{}</args></log4net.Error> Debug 
+2020-06-14 22:33:21,533 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-06-14 22:35:34,882 [1] INFO  Debug - 服务器启动监听127.0.0.1:8011成功 Debug 
+2020-06-14 22:35:38,256 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-06-14 22:35:38,400 [1] ERROR Debug - 协议解密出错:System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 AES.AESDecrypt(Byte[] DecryptByte, String DecryptKey) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SerBase\AES.cs:行号 207
+   在 MsgBase.Decode(ProtocolEnum protocol, Byte[] bytes, Int32 offset, Int32 count) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SimServer\Proto\MsgBase.cs:行号 102 Debug 
+2020-06-14 22:35:38,401 [1] ERROR Debug - <log4net.Error>Exception during StringFormat: 索引(从零开始)必须大于或等于零，且小于参数列表的大小。 <format>{0}协议内容解析错误：MsgSecret</format><args>{}</args></log4net.Error> Debug 
+2020-06-14 22:35:38,407 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-06-14 22:37:31,183 [1] INFO  Debug - 服务器启动监听127.0.0.1:8011成功 Debug 
+2020-06-14 22:37:38,562 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8011,当前1个客户端在线！ Debug 
+2020-06-14 22:37:38,695 [1] ERROR Debug - 协议解密出错:System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 AES.AESDecrypt(Byte[] DecryptByte, String DecryptKey) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SerBase\AES.cs:行号 207
+   在 MsgBase.Decode(ProtocolEnum protocol, Byte[] bytes, Int32 offset, Int32 count) 位置 C:\Users\Administrator\Desktop\Siki_Server\Server\SimServer\SimServer\Proto\MsgBase.cs:行号 102 Debug 
+2020-06-14 22:37:38,696 [1] ERROR Debug - <log4net.Error>Exception during StringFormat: 索引(从零开始)必须大于或等于零，且小于参数列表的大小。 <format>{0}协议内容解析错误：MsgSecret</format><args>{}</args></log4net.Error> Debug 
+2020-06-14 22:37:38,701 [1] DEBUG Debug - 一个客户端断开链接，当前总连接数：0 Debug 
+2020-06-14 22:38:46,492 [1] INFO  Debug - 服务器启动监听127.0.0.1:8011成功 Debug 
+2020-06-14 22:39:24,222 [1] INFO  Debug - 服务器启动监听127.0.0.1:8899成功 Debug 
+2020-06-14 22:39:27,951 [1] DEBUG Debug - 一个客户端链接：127.0.0.1:8899,当前1个客户端在线！ Debug 
